@@ -68,116 +68,115 @@ const suspectsArray = [
 // Rooms Array
 
 const roomsArray = [
-    {
-        name: "Dining Room",
-      },
-      {
-        name: "Conservatory",
-      },
-      {
-        name: "Kitchen",
-      },
-      {
-        name: "Study",
-      },
-      {
-        name: "Library",
-      },
-      {
-        name: "Billiard Room",
-      },
-      {
-        name: "Lounge",
-      },
-      {
-        name: "Ballroom",
-      },
-      {
-        name: "Hall",
-      },
-      {
-        name: "Spa",
-      },
-      {
-        name: "Living Room",
-      },
-      {
-        name: "Observatory",
-      },
-      {
-        name: "Theater",
-      },
-      {
-        name: "Guest House",
-      },
-      {
-        name: "Patio",
-      },
+  {
+    name: "Dining Room",
+  },
+  {
+    name: "Conservatory",
+  },
+  {
+    name: "Kitchen",
+  },
+  {
+    name: "Study",
+  },
+  {
+    name: "Library",
+  },
+  {
+    name: "Billiard Room",
+  },
+  {
+    name: "Lounge",
+  },
+  {
+    name: "Ballroom",
+  },
+  {
+    name: "Hall",
+  },
+  {
+    name: "Spa",
+  },
+  {
+    name: "Living Room",
+  },
+  {
+    name: "Observatory",
+  },
+  {
+    name: "Theater",
+  },
+  {
+    name: "Guest House",
+  },
+  {
+    name: "Patio",
+  },
 ];
 
 // Weapons Array
 
 const weaponsArray = [
-    {
-        name: "rope",
-        weight: 10,
-      },
-      {
-        name: "knife",
-        weight: 8,
-      },
-      {
-        name: "candlestick",
-        weight: 2,
-      },
-      {
-        name: "dumbbell",
-        weight: 30,
-      },
-      {
-        name: "poison",
-        weight: 2,
-      },
-      {
-        name: "axe",
-        weight: 15,
-      },
-      {
-        name: "bat",
-        weight: 13,
-      },
-      {
-        name: "trophy",
-        weight: 25,
-      },
-      {
-        name: "pistol",
-        weight: 20,
-      },
+  {
+    name: "rope",
+    weight: 10,
+  },
+  {
+    name: "knife",
+    weight: 8,
+  },
+  {
+    name: "candlestick",
+    weight: 2,
+  },
+  {
+    name: "dumbbell",
+    weight: 30,
+  },
+  {
+    name: "poison",
+    weight: 2,
+  },
+  {
+    name: "axe",
+    weight: 15,
+  },
+  {
+    name: "bat",
+    weight: 13,
+  },
+  {
+    name: "trophy",
+    weight: 25,
+  },
+  {
+    name: "pistol",
+    weight: 20,
+  },
 ];
 
 // ITERATION 2
 
 function selectRandom(elemento) {
-    let randomItem = Math.floor(Math.random() * elemento.length )
+  let randomItem = Math.floor(Math.random() * elemento.length);
 
-   
-return elemento[randomItem];
+  return elemento[randomItem];
 }
-console.log(selectRandom(weaponsArray))
+console.log(selectRandom(weaponsArray));
 function pickMystery() {
+  let suspect = selectRandom(suspectsArray);
+  console.log(suspect);
+  let weapon = selectRandom(weaponsArray);
+  let room = selectRandom(roomsArray);
 
-let suspect = selectRandom(suspectsArray)
-let weapon = selectRandom(weaponsArray)
-let room = selectRandom(roomsArray)
-
-let randomCard =  {
+  let randomCard = {
     suspect: suspect,
     weapon: weapon,
-    room: room
-}
+    room: room,
+  };
 
-return randomCard 
+  return randomCard;
 }
 
 // let randomSuspect = Math.floor(Math.random() * suspectsArray.length )
@@ -185,10 +184,10 @@ return randomCard
 // let randomRoom = Math.floor(Math.random() * roomsArray.length )
 // let startGame = [suspectsArray[randomSuspect],weaponsArray[randomWeapon],roomsArray[randomRoom]];
 // ITERATION 3
-console.log(pickMystery())
+console.log(pickMystery());
 function revealMystery() {
- 
- 
-    return `${pickMystery().suspect.firstName} ${pickMystery().suspect.lastName} killed Mr. Boddy using the ${pickMystery().weapon.name} in the ${pickMystery().room.name}!`
+  let mistery = pickMystery();
+
+  return `"${mistery.suspect.firstName} ${mistery.suspect.lastName} killed Mr.Boddy using the ${mistery.weapon.name} in the ${mistery.room.name}!"`;
 }
-console.log(revealMystery())
+console.log(revealMystery());
